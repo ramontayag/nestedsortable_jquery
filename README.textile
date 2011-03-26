@@ -1,0 +1,29 @@
+h1. Nested Sortable - jQuery
+
+This is "mjsarfatti.com":http://mjsarfatti.com/sandbox/nestedSortable/'s nested sortable with a few changes:
+
+h2. Change 1: @serialize@
+
+Serialize now supports the position or order of items as well. This hasn't been tested vigorously (I don't know what configuration options might not work), but it has changed from:
+
+<pre>
+itemName[23]=12
+</pre>
+
+to
+
+<pre>
+itemName[itemName_23][position]=0&itemName[itemName_23][parent_id]=itemName_12
+</pre>
+
+And this is how you'd parse through the returned params to your server in Ruby assuming my itemName is 'page':
+
+<pre>
+params['page'].each do |page_id, attributes|
+  id = page_id.gsub(/\D+/, "") # get ID for integer only
+  page = Page.find(id)
+  page.position = attributes['position']
+  page.parent_id = attributes['parent_id'].gsub(/\D+/, "")
+  page.save
+end
+</pre>
