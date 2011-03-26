@@ -157,31 +157,8 @@
       this.lastPositionAbs = this.positionAbs;
       return false;
     }, //End of mousedrag
-
-    //serialize: function(o) {
-
-    //var items = this._getItemsAsjQuery(o && o.connected);
-    //var str = []; o = o || {};
-
-    //$(items).each(function(index, element) {
-    //var res = ($(o.item || this).attr(o.attribute || 'id') || '').match(o.expression || (/(.+)[-=_](.+)/));
-    //var pid = ($(o.item || this).parent(o.listType).parent('li').attr(o.attribute || 'id') || '').match(o.expression || (/(.+)[-=_](.+)/));
-    //resource_id = (o.key || res[1]+'['+(o.key && o.expression ? res[1] : res[2])+']');
-    //parent_id = (pid ? (o.key && o.expression ? pid[1] : pid[2]) : 'root');
-    //if(res) {
-    //str.push(resource_id +'[parent_id]='+ parent_id);
-    //str.push(resource_id +'[position]='+ index);
-    //}
-    //});
-
-    //if(!str.length && o.key) {
-    //str.push(o.key + '=');
-    //}
-
-    //return str.join('&');
     serialize: function(o) {
       o = o || {};
-      //var sDepth = o.startDepthCount || 0;
       var ret = [];
 
       $(this.element).children('li').each(function() { _recursiveItems($(this)); });
@@ -210,9 +187,8 @@
         var container = resourceName + serializedId;
         ret.push(container + '[parent_id]='+ parentId);
         ret.push(container + '[position]='+ position);
-        //return item;
-      }
-    },
+      } // _recursiveItems
+    }, // serialize
     toHierarchy: function(o) {
       o = o || {};
       var sDepth = o.startDepthCount || 0;
