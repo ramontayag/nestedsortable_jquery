@@ -16,7 +16,7 @@ to
 itemName[itemName_23][position]=0&itemName[itemName_23][parent_id]=itemName_12
 </pre>
 
-And this is how you'd parse through the returned params to your server in Ruby assuming my itemName is 'page':
+And this is how you'd parse through the returned params to your server in Ruby assuming your itemName is 'page':
 
 <pre>
 params['page'].each do |page_id, attributes|
