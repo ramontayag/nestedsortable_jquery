@@ -1,6 +1,6 @@
 h1. Nested Sortable - jQuery
 
-This is "mjsarfatti.com":http://mjsarfatti.com/sandbox/nestedSortable/'s nested sortable with a few changes:
+This is "mjsarfatti.com's":http://mjsarfatti.com/sandbox/nestedSortable/ nested sortable with a few changes:
 
 h2. Change 1: @serialize@
 
