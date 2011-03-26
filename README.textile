@@ -2,7 +2,7 @@ h1. Nested Sortable - jQuery
 
 This is "mjsarfatti.com's":http://mjsarfatti.com/sandbox/nestedSortable/ nested sortable with a few changes:
 
-h2. Change 1: @serialize@
+h2. Change 1: serialize
 
 Serialize now supports the position or order of items as well. This hasn't been tested vigorously (I don't know what configuration options might not work), but it has changed from:
 
